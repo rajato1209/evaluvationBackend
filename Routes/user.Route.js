@@ -10,7 +10,7 @@ const userRouter=express.Router();
 userRouter.post("/register",async(req,res)=>{
     const {email,password,name,gender,age,city}=req.body;
     try {
-        const existU=await UserModel.find({email});
+        const existU =await UserModel.find({email});
         if(existU){
             res.send({"msg":"User already exist, please login"})
         }else{
